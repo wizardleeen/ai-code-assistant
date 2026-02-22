@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { FileNode } from '../types'
-import { Code, Save, X, FileText } from 'lucide-react'
+import { Code, Save, FileText } from 'lucide-react'
 import './CodeEditor.css'
 
 interface CodeEditorProps {
@@ -128,7 +128,7 @@ function CodeEditor({ file, onEdit }: CodeEditorProps) {
       
       <div className="editor-content">
         <div className="line-numbers">
-          {file.content.split('\n').map((_, index) => (
+          {(file.content || '').split('\n').map((_line, index) => (
             <div key={index} className="line-number">
               {index + 1}
             </div>
@@ -137,7 +137,7 @@ function CodeEditor({ file, onEdit }: CodeEditorProps) {
         
         <textarea
           ref={textareaRef}
-          value={file.content}
+          value={file.content || ''}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
           className="code-textarea"
