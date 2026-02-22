@@ -1,0 +1,177 @@
+.terminal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0d1117;
+  border-radius: 8px;
+  margin: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  font-size: 14px;
+  font-weight: 500;
+  color: #f0f6fc;
+}
+
+.terminal-controls {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.control-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.control-dot.red {
+  background: #ff5f56;
+}
+
+.control-dot.yellow {
+  background: #ffbd2e;
+}
+
+.control-dot.green {
+  background: #27ca3f;
+}
+
+.terminal-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 16px;
+}
+
+.message {
+  margin-bottom: 16px;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.message-icon {
+  flex-shrink: 0;
+}
+
+.system-icon {
+  color: #7c3aed;
+}
+
+.user-icon {
+  color: #22d3ee;
+}
+
+.ai-icon {
+  color: #f59e0b;
+}
+
+.message-timestamp {
+  font-size: 11px;
+  color: #6e7681;
+}
+
+.message-content {
+  margin-left: 22px;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.system-message .message-content {
+  color: #e6edf3;
+}
+
+.user-message .message-content {
+  color: #22d3ee;
+}
+
+.ai-message .message-content {
+  color: #f59e0b;
+  background: #1c1c1c;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid #f59e0b;
+  white-space: pre-wrap;
+}
+
+.terminal-line {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.input-form {
+  flex-shrink: 0;
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-top: 1px solid #30363d;
+}
+
+.prompt-icon {
+  color: #22d3ee;
+  flex-shrink: 0;
+}
+
+.command-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #e6edf3;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-size: 14px;
+  outline: none;
+  padding: 4px 0;
+}
+
+.command-input::placeholder {
+  color: #6e7681;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .terminal {
+    margin: 8px;
+    border-radius: 6px;
+  }
+  
+  .terminal-header {
+    padding: 10px 12px;
+  }
+  
+  .terminal-content {
+    padding: 12px;
+  }
+  
+  .message-content {
+    font-size: 13px;
+  }
+  
+  .command-input {
+    font-size: 13px;
+  }
+}

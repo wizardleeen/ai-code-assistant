@@ -1,0 +1,91 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0a0a0a;
+  color: #e4e4e7;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #111111;
+  border-bottom: 1px solid #333333;
+  min-height: 60px;
+}
+
+.app-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.title-icon {
+  color: #22d3ee;
+}
+
+.panel-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #333333;
+  border-radius: 6px;
+  color: #a1a1aa;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  background: #1a1a1a;
+  color: #e4e4e7;
+  border-color: #404040;
+}
+
+.tab.active {
+  background: #22d3ee;
+  color: #0a0a0a;
+  border-color: #22d3ee;
+  font-weight: 500;
+}
+
+.app-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    min-height: auto;
+  }
+  
+  .panel-tabs {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .tab {
+    flex: 1;
+    justify-content: center;
+    min-width: 0;
+  }
+}
