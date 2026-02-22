@@ -1,0 +1,260 @@
+.code-editor {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0d1117;
+  border-radius: 8px;
+  margin: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  font-size: 14px;
+  font-weight: 500;
+  color: #f0f6fc;
+}
+
+.editor-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.file-name {
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.file-language {
+  font-size: 11px;
+  background: #7c3aed;
+  color: #ffffff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #8b949e;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background: #21262d;
+  border-color: #404040;
+  color: #f0f6fc;
+}
+
+.save-btn:hover {
+  background: #1a7f37;
+  border-color: #1a7f37;
+  color: #ffffff;
+}
+
+.editor-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.line-numbers {
+  background: #0d1117;
+  border-right: 1px solid #21262d;
+  padding: 16px 8px;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+  font-size: 13px;
+  color: #6e7681;
+  line-height: 1.5;
+  text-align: right;
+  user-select: none;
+  min-width: 50px;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.line-number {
+  height: 19.5px;
+  padding-right: 8px;
+}
+
+.code-textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+  font-size: 13px;
+  color: #e6edf3;
+  line-height: 1.5;
+  padding: 16px;
+  resize: none;
+  white-space: pre;
+  overflow-wrap: normal;
+  overflow-x: auto;
+  overflow-y: auto;
+  tab-size: 2;
+}
+
+.code-textarea::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.code-textarea::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+.code-textarea::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 6px;
+}
+
+.code-textarea::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
+
+.code-textarea::placeholder {
+  color: #6e7681;
+}
+
+.editor-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: #161b22;
+  border-top: 1px solid #30363d;
+  font-size: 11px;
+  color: #6e7681;
+}
+
+.editor-stats {
+  display: flex;
+  gap: 16px;
+}
+
+.editor-info {
+  display: flex;
+  gap: 12px;
+}
+
+.encoding,
+.eol {
+  background: #30363d;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.empty-editor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 40px 20px;
+  text-align: center;
+  color: #6e7681;
+}
+
+.empty-editor .empty-icon {
+  color: #30363d;
+  margin-bottom: 16px;
+}
+
+.empty-editor h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #8b949e;
+}
+
+.empty-editor p {
+  margin: 0;
+  font-size: 14px;
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+/* 语法高亮 */
+.code-textarea {
+  /* JavaScript 关键字 */
+  --js-keyword: #ff7b72;
+  /* 字符串 */
+  --js-string: #a5d6ff;
+  /* 数字 */
+  --js-number: #79c0ff;
+  /* 注释 */
+  --js-comment: #8b949e;
+  /* 函数 */
+  --js-function: #d2a8ff;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .code-editor {
+    margin: 8px;
+    border-radius: 6px;
+  }
+  
+  .editor-header {
+    padding: 10px 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .editor-title {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .file-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .line-numbers {
+    padding: 12px 6px;
+    min-width: 40px;
+  }
+  
+  .code-textarea {
+    font-size: 12px;
+    padding: 12px;
+  }
+  
+  .editor-footer {
+    padding: 6px 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .editor-stats {
+    gap: 12px;
+  }
+  
+  .editor-info {
+    gap: 8px;
+  }
+}
