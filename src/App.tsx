@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import Terminal from './components/Terminal'
 import FileExplorer from './components/FileExplorer'
 import CodeEditor from './components/CodeEditor'
@@ -156,7 +156,6 @@ function App() {
   }
 
   const handleAIQuery = (query: string) => {
-    // 模拟 AI 响应
     setTimeout(() => {
       let response = ''
       const lowerQuery = query.toLowerCase()
